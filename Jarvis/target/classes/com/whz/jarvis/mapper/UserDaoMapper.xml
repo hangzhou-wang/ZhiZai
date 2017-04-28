@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.whz.jarvis.dao.JarvisDao">
+	<!-- 要对应到所有属性 才能使用 -->
+	<resultMap id="JarvisWords" type="com.whz.jarvis.model.JarvisWords">
+		<result property="id" column="id" />
+		<result property="question" column="question" />
+		<result property="answer" column="answer" />
+	</resultMap>
+	<!--教Jarvis说话-->
+	<insert id="insertJarvisWords" parameterType="com.whz.jarvis.model.JarvisWords">
+		INSERT INTO jarvis_words(
+			question,
+			answer
+		)VALUES(
+			#{question},
+			#{answer}
+		)
+	</insert>
+	<!-- 得到回答 -->
+	<select id="getAnswer" parameterType="String" resultType="String">
+		SELECT answer FROM jarvis_words WHERE question = #{question}
+	</select>
+	<!-- 检查问题是否已经存在答案 -->
+	<select id="checkQuestion" parameterType="String" resultType="long">
+		SELECT COUNT(*) FROM jarvis_words WHERE question=#{question}
+	</select>
+	<!-- 更新问题答案 -->
+	<update id="updateAnswer" parameterType="String">
+		UPDATE jarvis_words SET answer=#{answer} WHERE question=#{question}
+	</update>
+		
+</mapper>
