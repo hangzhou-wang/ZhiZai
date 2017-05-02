@@ -1,0 +1,46 @@
+﻿.promptbox{
+    position: fixed;
+    bottom: 30px;
+    left: 0px;
+    padding: 3px 18px;
+    box-shadow: 1px 1px 3px #b0b0b0;
+    z-index: 99;
+    display: none
+}
+.prompt-label{
+    display: inline-block;
+    width: 5px;
+    height: 100%;
+    position: absolute;
+    left: 0px;
+    bottom:0px
+}
+.prompt-word{
+    font-size: 13px;
+    color: #fff;
+    font-weight: 600;
+}
+.promptbox.normal{
+    background: #3A9BD9
+}
+.promptbox.normal .prompt-label{
+    background: #3e92c8
+}
+.promptbox.success{
+    background: #95BA12
+}
+.promptbox.success .prompt-label{
+    background: #8cac1a
+}
+.promptbox.warning{
+    background: #FF9101
+}
+.promptbox.warning .prompt-label{
+    background: #E68300
+}
+.promptbox.error{
+    background: #E74C3C
+}
+.promptbox.error .prompt-label{
+    background: #d34c3e
+}
