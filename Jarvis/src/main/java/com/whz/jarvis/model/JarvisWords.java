@@ -1,6 +1,6 @@
 package com.whz.jarvis.model;
 /**
- * Jarvis应答库
+ * Jarvis应答
  * @author Joe
  *
  * 2017年4月27日
