@@ -12,6 +12,14 @@
        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
 
 
+	<!-- 配置拦截器 -->
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/**" />
+			<bean class="com.whz.jarvis.interceptor.LoginInterceptor">
+			</bean>
+		</mvc:interceptor>
+	</mvc:interceptors>
 	<!--默认的mvc注解映射的支持 -->
 	<mvc:annotation-driven />
 	<!-- 处理对静态资源的请求 -->

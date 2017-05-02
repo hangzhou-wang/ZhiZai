@@ -32,5 +32,35 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<update id="updateAnswer" parameterType="String">
 		UPDATE jarvis_words SET answer=#{answer} WHERE question=#{question}
 	</update>
-		
+	<!-- 根据用户名得到该用户信息 -->
+	<select id="getUserByName" parameterType="String" resultType="com.whz.jarvis.model.JarvisUser">
+		SELECT
+			id,
+			name,
+			password,
+			registerDate,
+			phone,
+			address,
+			hobbies
+		FROM
+			jarvis_user
+		WHERE
+			name = #{name}
+	</select>
+	<!-- 新用户注册 -->
+	<insert id="insertJarvisUser" parameterType="com.whz.jarvis.model.JarvisUser">
+		INSERT INTO jarvis_user(
+			name,
+			password,
+			phone,
+			address,
+			hobbies
+		)VALUES(
+			#{name},
+			#{password},
+			#{phone},
+			#{address},
+			#{hobbies}
+		)
+	</insert>
 </mapper>

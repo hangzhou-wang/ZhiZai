@@ -40,7 +40,7 @@
 </style>
 <script type="text/javascript">
 	$(function(){
-		$('.panel-body').append('<div class="talkr"><div class="wordr"><div class="commentRobot">你好！好久不见</div></div><img class="headPhotoRobot" title="头像" alt="头像" align="absmiddle" src="<%=basePath %>static/images/robot.png"/></div>');
+		$('.panel-body').append('<div class="talkr"><div class="wordr"><div class="commentRobot">你好，${user.name}  !好久不见</div></div><img class="headPhotoRobot" title="头像" alt="头像" align="absmiddle" src="<%=basePath %>static/images/robot.png"/></div>');
 		$("#goBtn").click(function(){
 			
 			var div = document.getElementById('divTalk');
@@ -100,6 +100,7 @@
 </script>
 </head>
 <body style="background:url(<%=basePath %>static/images/robotBkg.png) no-repeat;" onkeypress="go()">
+	<a style="margin-top:100px;margin-left:20px;" href="<%=basePath %>jarvis/user/exit">退出</a>
 	<a href="<%=basePath %>goto/toLearn">
 		<button id="teach" type="button" class="btn btn-primary">教Jarvis说话</button>
 	</a>

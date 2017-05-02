@@ -20,4 +20,9 @@ public class GotoController {
 	public String toTalk(){
 		return "talk";
 	}
+	//跳转到登录页面
+	@RequestMapping("/goto/login")
+	public String toLogin(){
+		return "login";
+	}
 }
