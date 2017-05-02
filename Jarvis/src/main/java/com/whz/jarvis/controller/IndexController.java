@@ -9,7 +9,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.whz.jarvis.beans.RobotWord;
-
+/**
+ * 第一个版本的回答方式
+ * @author Joe
+ *没有牵扯到数据库，一问一答的方式
+ * 2017年4月28日
+ */
 @Controller
 public class IndexController {
 	private static final Logger log = Logger.getLogger(IndexController.class);
@@ -20,9 +25,8 @@ public class IndexController {
 
 	/**
 	 * 响应前台对话
-	 * 
-	 * @param yourWord
-	 * @return
+	 * @param yourWord 接收用户输入的问题
+	 * @return 返回Jarvis的对话
 	 */
 	@RequestMapping("/robot/talk")
 	public @ResponseBody RobotWord talk(String yourWord) {
@@ -33,7 +37,7 @@ public class IndexController {
 			word.setDatetime(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Calendar.getInstance().getTime()));
 			log.info("你说的话------>" + yourWord + ";Jarvis的回话------->" + word.getWord()+ ";时间------>"
 					+ word.getDatetime());
-		} else if (isNumeric(yourWord)) {
+		} else if (isNumeric(yourWord)) {	//判断用户输入是否为数字
 			word.setCode("SeeNumber");
 			int nextNum = Integer.parseInt(yourWord) + 1;
 			word.setWord("数数吗？这个我会^_^,下一个是：" + nextNum + "  该你了！");
