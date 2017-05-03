@@ -12,56 +12,10 @@
 <title>robot</title>
 <link rel="stylesheet" href="<%=basePath%>static/css/bootstrap.min.css" type="text/css"></link>
 <link rel="stylesheet" href="<%=basePath%>static/css/bootstrap-theme.min.css" type="text/css"></link>
+<link rel="stylesheet" href="<%=basePath%>static/css/promptbox.css" type="text/css"></link>
 <script type="text/javascript" src="<%=basePath%>static/js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="<%=basePath%>static/js/bootstrap.js"></script>
-<style type="text/css">
-	.promptbox{
-	    position: fixed;
-	    bottom: 30px;
-	    left: 0px;
-	    padding: 3px 18px;
-	    box-shadow: 1px 1px 3px #b0b0b0;
-	    z-index: 99;
-	    display: none
-	}
- 	.prompt-label{ 
- 	    display: inline-block;
- 	    width: 5px; 
- 	    height: 100%; 
-	    position: absolute; 
- 	    left: 0px; 
- 	    bottom:0px 
-	} 
-	.prompt-word{
-	    font-size: 13px;
-	    color: #fff;
-	    font-weight: 600;
-	}
-	.promptbox.normal{
-	    background: #3A9BD9
-	}
-	.promptbox.normal .prompt-label{
-	    background: #3e92c8
-	}
-	.promptbox.success{
-	    background: #95BA12
-	}
-	.promptbox.success .prompt-label{
-	    background: #8cac1a
-	}
-	.promptbox.warning{
-	    background: #FF9101
-	}
-	.promptbox.warning .prompt-label{
-	    background: #E68300
-	}
-	.promptbox.error{
-	    background: #E74C3C
-	}
-	.promptbox.error .prompt-label{
-	    background: #d34c3e
-	}
-</style>
+<script type="text/javascript" src="<%=basePath%>static/js/promptbox.js"></script>
 <style type="text/css">
 	#containerMain{width:420px;height:450px;margin:auto;margin-top:100px;}
 	.panel-title{text-align:center;font-size:23px;}
@@ -70,31 +24,6 @@
 	span{margin-left:15px;}
 </style>
 <script type="text/javascript">
-	function prompt(promptWord, promptStatus) {
-	    if (promptStatus === "undefined") {
-	        promptStatus = 'normal';
-	    } else if (promptStatus == "success") {
-	        promptStatus = 'success';
-	    } else if (promptStatus == "warning") {
-	        promptStatus = 'warning';
-	    } else if (promptStatus == "error") {
-	        promptStatus = 'error';
-	    } else {
-	        promptStatus = 'normal';
-	    }
-	    $('<div class="promptbox ' +promptStatus + '"><span class="prompt-label"></span><span class="prompt-word">' + promptWord + '</span></div>')
-	        .appendTo('body')
-	        .animate({ bottom: '+=15', opacity: "show" }, 700);
-	
-	    for (i = 1; i < $('.promptbox').length; i++) {
-	        $('.promptbox').eq(i - 1).finish().animate({ 'bottom': '+=30' });
-	    }
-	
-	    setTimeout(function () {
-	        $('.promptbox:eq(0)').remove();
-	    }, 3000);
-	}
-
 	$(function() {
 		$('#btnLogin').click(function(){
 			prompt('prompt提示框测试','normal');
