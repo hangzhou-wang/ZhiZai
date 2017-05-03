@@ -5,7 +5,7 @@
 	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
 			+ path + "/";
 %>
-<!DOCTYPE>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <link rel="shortcut icon" href="<%=basePath%>static/images/webicon.ico" type="image/x-icon" />
@@ -27,11 +27,8 @@ body {
 	height: 100%
 }
 </style>
-
 <script src="http://api.map.baidu.com/api?v=1.4" type="text/javascript"></script>
-
 </head>
-
 <body>
 	<input type="text" id="cityName" value="上海" />
 
@@ -79,7 +76,5 @@ body {
 		}
 		search.search(document.getElementById("cityName").value);
 	</script>
-
 </body>
-
 </html>
