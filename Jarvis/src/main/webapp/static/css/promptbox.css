@@ -1,11 +1,13 @@
-﻿.promptbox{
+.promptbox{
     position: fixed;
-    bottom: 30px;
-    left: 0px;
+    top: 100px;
+   	left:260px;
     padding: 3px 18px;
     box-shadow: 1px 1px 3px #b0b0b0;
     z-index: 99;
-    display: none
+    display: none;
+    height:60px;
+    line-height:60px
 }
 .prompt-label{
     display: inline-block;

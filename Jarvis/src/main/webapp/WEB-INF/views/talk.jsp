@@ -10,6 +10,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>robot</title>
+<link rel="shortcut icon" href="<%=basePath%>static/images/webicon.ico" type="image/x-icon" />
+
 <link rel="stylesheet" href="<%=basePath%>static/css/bootstrap.min.css" type="text/css"></link>
 <link rel="stylesheet" href="<%=basePath%>static/css/bootstrap-theme.min.css" type="text/css"></link>
 <script type="text/javascript" src="<%=basePath%>static/js/jquery-3.2.1.min.js"></script>
@@ -36,7 +38,7 @@
 	#containerMain{margin:20px auto;width:700px;}
 	.panel-body{height:500px; overflow-x:hidden; overflow-y:scroll;overflow-y:visible;}
 	#msgBox{width:300px;height:150px;text-align: center;line-height: 150px;font-size:15px;position:relative;}
-	#teach{margin-top:200px;margin-left:85px;position:absolute;}
+	#teach{margin-top:220px;margin-left:35px;position:absolute;}
 </style>
 <script type="text/javascript">
 	$(function(){
@@ -97,10 +99,20 @@
 			$("#goBtn").click();
 		}
 	}
+	
+	function delcfm() {
+		$('#delcfmModel').modal();
+	}
+	function urlSubmit() {
+		var url = $.trim($("#exitUrl").val());// 获取会话中的隐藏属性URL
+		console.log('test');
+		console.log(url);
+		window.location.href = url;
+	}
 </script>
 </head>
 <body style="background:url(<%=basePath %>static/images/robotBkg.png) no-repeat;" onkeypress="go()">
-	<a style="margin-top:100px;margin-left:20px;" href="<%=basePath %>jarvis/user/exit">退出</a>
+	<a onclick="delcfm()" href="javascript:void(0);">退出</a>
 	<a href="<%=basePath %>goto/toLearn">
 		<button id="teach" type="button" class="btn btn-primary">教Jarvis说话</button>
 	</a>
@@ -124,5 +136,24 @@
 			</div>
 		</div>
 	</div>
+<!-- 信息删除确认 -->  
+<div class="modal fade" id="delcfmModel">  
+  <div class="modal-dialog">  
+    <div class="modal-content message_align">  
+      <div class="modal-header">  
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>  
+        <h4 class="modal-title">提示信息</h4>  
+      </div>  
+      <div class="modal-body">
+        <p>确定不再聊会儿了？</p>  
+      </div>
+      <div class="modal-footer">  
+      	<input value="<%=basePath %>jarvis/user/exit" id="exitUrl" type="hidden"/>
+         <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>  
+         <a onclick="urlSubmit()" class="btn btn-primary" data-dismiss="modal">确定</a>  
+      </div>  
+    </div><!-- /.modal-content -->  
+  </div><!-- /.modal-dialog -->  
+</div><!-- /.modal --> 
 </body>
 </html>

@@ -10,12 +10,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>robot</title>
+
+<link rel="shortcut icon" href="<%=basePath%>static/images/webicon.ico" type="image/x-icon" />
+
 <link rel="stylesheet" href="<%=basePath%>static/css/bootstrap.min.css" type="text/css"></link>
 <link rel="stylesheet" href="<%=basePath%>static/css/bootstrap-theme.min.css" type="text/css"></link>
 <link rel="stylesheet" href="<%=basePath%>static/css/promptbox.css" type="text/css"></link>
 <script type="text/javascript" src="<%=basePath%>static/js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="<%=basePath%>static/js/bootstrap.js"></script>
 <script type="text/javascript" src="<%=basePath%>static/js/promptbox.js"></script>
+<script type="text/javascript" src="<%=basePath%>static/js/jarvis.js"></script>
 <style type="text/css">
 	#containerMain{width:420px;height:450px;margin:auto;margin-top:100px;}
 	.panel-title{text-align:center;font-size:23px;}

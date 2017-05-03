@@ -10,6 +10,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>学说话</title>
+<link rel="shortcut icon" href="<%=basePath%>static/images/webicon.ico" type="image/x-icon" />
 <link rel="stylesheet" href="<%=basePath%>static/css/bootstrap.min.css" type="text/css"></link>
 <link rel="stylesheet" href="<%=basePath%>static/css/bootstrap-theme.min.css" type="text/css"></link>
 <script type="text/javascript" src="<%=basePath%>static/js/jquery-3.2.1.min.js"></script>
